@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Kunayah Crafts</h1>
+    <p>A marketplace for handcrafts </p>
+</div>
+
+<div class="card-group">
+@foreach (var product in Model.Products) 
+{
+    <div class="card">
+            <img src=@product.Image class="card-img-top" />
+            <div class="card-body">
+                <h5 class="card-title">@product.Title</h5>
+                <a class="card-text" href=@product.Url>Link</a>
+                <p class="card-text">@product.Description</p>
+                 <p class="card-text">@product.Maker</p>
+            </div>
+    </div>
+}
+</div>
